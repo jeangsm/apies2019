@@ -1,0 +1,31 @@
+<% include parts/header %>
+
+<% if(erro) { %>
+<h1>Contato não existe!</h1>
+<% } else { %>
+
+<h1>Contato <%= dados.id %></h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Email</th>
+      <th scope="col">Fone</th>
+    </tr>
+  </thead>
+  <tbody>
+     		<tr>
+		    	<th scope="row"><%= dados.id %></th>
+		    	<td><%= dados.nome %></td>
+		    	<td><%= dados.email %></td>
+		    	<td><%= dados.telefone %></td>
+		    </tr>
+  </tbody>
+</table>
+
+<% } %>
+<a href="/"><button type="button" class="btn btn-primary">Voltar</button></a>
+
+<% include parts/footer %>

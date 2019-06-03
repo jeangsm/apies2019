@@ -1,0 +1,33 @@
+<% include parts/header %>
+
+<h1>Lista de contatos</h1>
+
+<form class="form-inline my-2 my-lg-0" method="GET" action="/contato">
+      <input class="form-control mr-sm-2" type="text" placeholder="ID do contato" name="id" aria-label="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar contato</button>
+      <a href="/adicionar-contato"><button type="button" class="btn btn-outline-primary">Adicionar contato</button></a>
+</form>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Email</th>
+      <th scope="col">Fone</th>
+    </tr>
+  </thead>
+  <tbody>
+     	<% for(var i=0; i < dados.length; i++) { %>
+     		<tr>
+		    	<th scope="row"><%= dados[i].id %></th>
+		    	<td><%= dados[i].nome %></td>
+		    	<td><%= dados[i].email %></td>
+		    	<td><%= dados[i].telefone %></td>
+		    </tr>
+
+		<% } %>
+  </tbody>
+</table>
+
+<% include parts/footer %>
