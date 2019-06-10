@@ -4,7 +4,7 @@ exports.getHome = (req, res, next) => {
 	axios.get('http://engswii-lista-contatos.herokuapp.com/api/contatos')
 		.then((response) => {
 			var dados = response.data;
-			res.render('index', {dados: dados});
+			res.status(200).render('index', {dados: dados});
 		})
 		.catch((error) => {
 			console.log('Deu treta: ' + error);
@@ -18,13 +18,14 @@ exports.getContato = (req, res, next) => {
 		.then((response) => {
 			var erro = false;
 			var dados = response.data;
-			console.log(response.data);
+			//console.log(response.data);
 			res.render('contato', {dados: dados, erro: erro});
 		})
 		.catch((error) => {
 			var erro = true;
-			console.log('Deu treta: ' + error.response.status);
-			res.render('contato', {erro: erro});
+			//console.log('Deu treta: ' + error.response.status);
+			//res.render('contato', {erro: erro});
+			res.status(404).render('contato', {erro: erro});
 		});
 }
 
@@ -42,7 +43,7 @@ exports.setContato = (req, res, next) => {
 		telefone: telefone
 	})
 	.then((response) => {
-		console.log("Deu certo!" + response);
+		//console.log("Deu certo!" + response);
 		res.redirect('/');
 	})
 	.catch((error) => {

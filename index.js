@@ -17,3 +17,5 @@ consign()
 app.listen(process.env.PORT, () => {
 	console.log("Server funfando na porta " + process.env.PORT);
 });
+
+module.exports = app;
