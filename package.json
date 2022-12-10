@@ -16,7 +16,7 @@
     "consign": "^0.1.6",
     "dotenv": "^8.0.0",
     "ejs": "^2.6.1",
-    "express": "^4.17.1"
+    "express": "^4.17.3"
   },
   "devDependencies": {
     "chai": "^4.2.0",
